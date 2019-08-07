@@ -7,7 +7,7 @@
     <div class="container">
       <searchInput @search="filterValue = $event" ></searchInput>
       <p class="list">Currency List</p>
-      <Currency v-for="currency in currencies" :item="currency"></Currency>
+      <Currency v-for="currency in currencies" :item="currency" @delete="deleteCurrency($event)"></Currency>
       <Currency addButton></Currency>
     </div>
   </div>
@@ -17,7 +17,7 @@
 import TopBar from "./TopBar";
 import SearchInput from "./SearchInput";
 import Currency from "./Currency"
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 import { filter } from 'minimatch';
 export default {
   name: "CurrencyList",
@@ -28,9 +28,11 @@ export default {
     ...mapGetters(['getCurrencies', 'filter']),
     currencies: function() {
       const currencies = this.filterValue ? this.filter(this.filterValue) : this.getCurrencies;
-      console.log('currencies => ', currencies)
       return currencies;
     }
+  },
+  methods: {
+    ...mapMutations(['deleteCurrency'])
   },
   components: {
     TopBar,

@@ -3,7 +3,7 @@
     <p v-if="addButton" @click="goToAddPage" class="currency addButton">
     <span class="plus">&#10010;</span> ADD CURRENCY
   </p>
-  <p v-else @click="goToEditPage" class="currency">{{item.iso}} <span v-if="hover" class="delete">Delete</span></p>
+  <p v-else @click="goToEditPage" class="currency">{{item.iso}} <span v-if="hover" @click="deleteItem($event)" class="delete">Delete</span></p>
   </div>
 </template>
 
@@ -31,6 +31,11 @@ export default {
     },
     goToEditPage: function() {
       this.$router.push(`/currencies/edit/${this.item.id}`)
+    },
+    deleteItem: function(evt) {
+      evt.stopPropagation()
+     this.$emit('delete', this.item.id)
+     if(this.$route.name == 'edit' && this.$route.params.id == this.item.id) this.$router.push('/')    
     }
   }
 };

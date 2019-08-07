@@ -12,7 +12,7 @@ export default {
   name: "SearchInput",
   methods: {
     emitValue: function(evt) {
-      this.$emit('search', evt);
+      this.$emit('search', evt.toLowerCase());
     }
   }
 };
