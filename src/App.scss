@@ -1,0 +1,15 @@
+//Import Variables
+@import './scss/variables';
+
+
+//Import BootstrapCss
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+//Global settings
+html, body {
+  height: 100%;
+  width: 100%;
+  //overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}

@@ -1,18 +1,25 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <CurrenciesTopBar></CurrenciesTopBar>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<style  lang="scss">
+@import "@/scss/_variables.scss";
 
-export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
+.home {
+  color: $background;
+  height: 100%;
 }
+</style>
+
+
+<script>
+import CurrenciesTopBar from "./../components/CurrenciesTopBar";
+export default {
+  name: "home",
+  components: {
+    CurrenciesTopBar
+  }
+};
 </script>

@@ -1,29 +1,28 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <b-row no-gutters class="mainLayout">
+    <b-col xl="4" lg="5" md="6" class="pa-0">
+      <CurrencyList></CurrencyList>
+    </b-col>
+    <b-col xl="8" lg="7" md="6">
+      <router-view />
+    </b-col>
+  </b-row>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+@import "./App.scss";
+
+.mainLayout {
+  height: 100%;
 }
 </style>
+
+<script>
+import CurrencyList from "./components/CurrencyList";
+export default {
+  components: {
+    CurrencyList
+  }
+};
+</script>
+
