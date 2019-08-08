@@ -8,7 +8,7 @@
       <searchInput @search="filterValue = $event" ></searchInput>
       <p class="list">Currency List</p>
       <div class="currencies">
-        <Currency v-for="currency in currencies" :item="currency" @delete="deleteCurrency($event)"></Currency>
+        <Currency v-for="currency in currencies" :key="currency.id" :item="currency" @delete="deleteCurrency($event)"></Currency>
       </div>
       <Currency addButton></Currency>
     </div>
@@ -20,7 +20,6 @@ import TopBar from "../Widgets/TopBar";
 import SearchInput from "../Widgets/SearchInput";
 import Currency from "./Currency"
 import { mapGetters, mapMutations } from 'vuex'
-import { filter } from 'minimatch';
 export default {
   name: "CurrencyList",
   data: () => ({

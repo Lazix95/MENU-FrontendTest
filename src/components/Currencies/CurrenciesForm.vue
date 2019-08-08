@@ -58,7 +58,7 @@ export default {
     }
   },
   methods: {
-    onSubmit(evt) {
+    onSubmit() {
       this.validateForm(() => {
         this.$emit("submit", this.form);
       });
@@ -99,7 +99,7 @@ export default {
     }
   },
   watch: {
-    itemToEdit: function(val, old) {
+    itemToEdit: function() {
       this.populateForm()
     }
   },
