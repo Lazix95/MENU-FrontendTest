@@ -26,12 +26,22 @@ const getters = {
 const mutations = {
   addNewCurrency: (state, payload) => {
     state.currencies = [...state.currencies, payload]
+    sessionStorage.setItem('currencies', JSON.stringify(state.currencies))
   },
   updateEditedCurrency: (state, payload) => {
     state.currencies = state.currencies.map(currency => currency.id === payload.id ? (currency = payload) : currency)
+    sessionStorage.setItem('currencies', JSON.stringify(state.currencies))
   },
   deleteCurrency: (state, id) => {
     state.currencies = state.currencies.filter(currency => currency.id !== id)
+    sessionStorage.setItem('currencies', JSON.stringify(state.currencies))
+  },
+  loadCurrencies: (state) => {
+    let currencies = sessionStorage.getItem('currencies')
+    if(currencies) {
+      currencies = JSON.parse(currencies)
+      state.currencies = currencies
+    }
   }
 }
 

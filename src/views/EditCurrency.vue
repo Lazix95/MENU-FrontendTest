@@ -1,7 +1,7 @@
 <template>
   <div class="addCurrency">
     <CurrenciesTopBar></CurrenciesTopBar>
-    <div class="container">
+    <div class="container mainContent">
       <p class="pageTitle">Edit Currency</p>
       <CurrenciesForm
         :currencies="getCurrencies"

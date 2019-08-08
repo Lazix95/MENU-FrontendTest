@@ -1,7 +1,7 @@
 <template>
   <div class="addCurrency">
     <CurrenciesTopBar></CurrenciesTopBar>
-    <div class="container">
+    <div class="container mainContent">
       <p class="pageTitle">Add Curreny</p>
       <CurrenciesForm :currencies="getCurrencies" @submit="onSubmit($event)"></CurrenciesForm>
     </div>
@@ -37,6 +37,7 @@ export default {
 .addCurrency {
   background: $background;
   height: 100%;
+  width: 100%;
   .pageTitle {
     color: $primary;
     border-bottom: 1px solid $primary;
