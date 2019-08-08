@@ -1,16 +1,5 @@
 const state = {
-  currencies: [
-    {
-      id: 1,
-      iso: "USD",
-      symbol: "$"
-    },
-    {
-      id: 2,
-      iso: "EUR",
-      symbol: "e"
-    }
-  ]
+  currencies: []
 }
 
 const getters = {
@@ -38,7 +27,7 @@ const mutations = {
   },
   loadCurrencies: (state) => {
     let currencies = sessionStorage.getItem('currencies')
-    if(currencies) {
+    if (currencies) {
       currencies = JSON.parse(currencies)
       state.currencies = currencies
     }
@@ -47,7 +36,8 @@ const mutations = {
 
 const actions = {
   addCurrency: ({ state, commit }, payload) => {
-    const newId = parseInt(state.currencies[state.currencies.length - 1].id) + 1; // Currency with highest ID is always on the bottom of the array
+    // Currency with highest ID is always on the bottom of the array
+    const newId = state.currencies.length > 0 ? parseInt(state.currencies[state.currencies.length - 1].id) + 1 : 0;
     const newCurrency = {
       id: newId,
       iso: payload.code,
