@@ -7,7 +7,9 @@
     <div class="container">
       <searchInput @search="filterValue = $event" ></searchInput>
       <p class="list">Currency List</p>
-      <Currency v-for="currency in currencies" :item="currency" @delete="deleteCurrency($event)"></Currency>
+      <div class="currencies">
+        <Currency v-for="currency in currencies" :item="currency" @delete="deleteCurrency($event)"></Currency>
+      </div>
       <Currency addButton></Currency>
     </div>
   </div>
@@ -52,7 +54,10 @@ export default {
   .topBar {
     margin-bottom: 20px;
   }
-
+  .currencies {
+    max-height: 523px;
+    overflow: auto;
+  }
   .list {
     color: $darkenPrimary;
     border-bottom: 1px solid $darkenPrimary;

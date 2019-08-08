@@ -17,3 +17,26 @@ html, body {
   max-width: 935px;
   margin-left: 15px;
 }
+
+//Custom ScrollBar, it works only for webkit browsers.
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $darkenBackground;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary; 
+  border-radius: 999px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $darkenPrimary;
+}

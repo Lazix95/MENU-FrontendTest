@@ -33,7 +33,6 @@ export const validateSymbol = (symbol) => {
     message: '',
     status: null
   }
-  console.log('symbol => ',symbol)
 
   if (typeof symbol !== 'string') return $return
 
