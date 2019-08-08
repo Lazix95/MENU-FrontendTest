@@ -22,7 +22,8 @@ export default {
   computed: {
     ...mapGetters(["getCurrency", "getCurrencies"]),
     itemToEdit: function() {
-      const elem = this.getCurrency(this.$route.params.id);
+      const currId = this.$route.params.id
+      const elem = this.getCurrency(currId);
       return elem;
     }
   },

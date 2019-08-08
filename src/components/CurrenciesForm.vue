@@ -89,15 +89,22 @@ export default {
       } else {
         return false;
       }
-    }
-  },
-  mounted() {
-    if (this.itemToEdit) {
-      console.log("item to edit", this.itemToEdit);
+    },
+    populateForm() {
+      if (this.itemToEdit) {
       this.form.id = this.itemToEdit.id;
       this.form.code = this.itemToEdit.iso;
       this.form.symbol = this.itemToEdit.symbol;
     }
+    }
+  },
+  watch: {
+    itemToEdit: function(val, old) {
+      this.populateForm()
+    }
+  },
+  mounted() {
+    this.populateForm();
   }
 };
 </script>

@@ -1,12 +1,12 @@
 const state = {
   currencies: [
     {
-      id: "1",
+      id: 1,
       iso: "USD",
       symbol: "$"
     },
     {
-      id: "2",
+      id: 2,
       iso: "EUR",
       symbol: "e"
     }
@@ -15,9 +15,9 @@ const state = {
 
 const getters = {
   getCurrencies: state => state.currencies,
-  getCurrency: state => id => state.currencies.find(el => el.id === id),
+  getCurrency: state => id => state.currencies.find(el => el.id == id),
   filter: state => keyword => {
-    const currenciesToReturn = state.currencies.filter(el => 
+    const currenciesToReturn = state.currencies.filter(el =>
       (el.id == keyword) || (el.iso.toLowerCase().includes(keyword) || el.symbol.toLowerCase().includes(keyword)))
     return currenciesToReturn
   }
@@ -37,8 +37,9 @@ const mutations = {
 
 const actions = {
   addCurrency: ({ state, commit }, payload) => {
+    const newId = parseInt(state.currencies[state.currencies.length - 1].id) + 1; // Currency with highest ID is always on the bottom of the array
     const newCurrency = {
-      id: state.currencies.length,
+      id: newId,
       iso: payload.code,
       symbol: payload.symbol
     }
