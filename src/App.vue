@@ -1,9 +1,9 @@
 <template>
   <b-row no-gutters class="mainLayout">
-    <b-col xl="4" lg="5" md="5" class="pa-0">
+    <b-col xl="3" lg="5" md="5" class="pa-0">
       <CurrencyList></CurrencyList>
     </b-col>
-    <b-col xl="8" lg="7" md="7">
+    <b-col xl="9" lg="7" md="7">
       <router-view />
     </b-col>
   </b-row>
@@ -11,7 +11,7 @@
 
 <script>
 import { mapMutations } from 'vuex'
-import CurrencyList from "./components/CurrencyList";
+import CurrencyList from "./components/Currencies/CurrencyList";
 export default {
   methods: {
     ...mapMutations(['loadCurrencies'])

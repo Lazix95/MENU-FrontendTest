@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import CurrenciesTopBar from "./../components/CurrenciesTopBar";
-import CurrenciesForm from "./../components/CurrenciesForm";
+import CurrenciesTopBar from "../components/Currencies/CurrenciesTopBar";
+import CurrenciesForm from "../components/Currencies/CurrenciesForm";
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "AccCurrency",

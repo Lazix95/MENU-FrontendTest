@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { validateCode, validateSymbol } from "./../utils/validations";
+import { validateCode, validateSymbol } from "../../utils/validations";
 export default {
   name: "CurrenciesForm",
   data() {
@@ -121,13 +121,13 @@ export default {
     margin-top: 10px;
     color: #666666;
     font-weight: 600;
-    padding: 0 50px 0 0;
+    padding: 0 20px 0 0;
   }
   .inputCol {
     padding-right: 0;
     input {
       @include inputShadow;
-      height: 50px;
+      height: 42px;
       border-radius: 0;
     }
     .is-invalid,

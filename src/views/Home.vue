@@ -4,6 +4,16 @@
   </div>
 </template>
 
+<script>
+import CurrenciesTopBar from "../components/Currencies/CurrenciesTopBar";
+export default {
+  name: "home",
+  components: {
+    CurrenciesTopBar
+  }
+};
+</script>
+
 <style  lang="scss">
 @import "@/scss/_variables.scss";
 
@@ -12,14 +22,3 @@
   height: 100%;
 }
 </style>
-
-
-<script>
-import CurrenciesTopBar from "./../components/CurrenciesTopBar";
-export default {
-  name: "home",
-  components: {
-    CurrenciesTopBar
-  }
-};
-</script>

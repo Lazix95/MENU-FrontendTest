@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./../scss/_variables.scss";
+@import "../../scss/variables";
 .currency {
   border-bottom: 2px solid #cccccc;
   padding: 1rem 0;

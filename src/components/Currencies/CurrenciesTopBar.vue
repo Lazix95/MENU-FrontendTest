@@ -1,14 +1,14 @@
 <template>
   <TopBar>
       <span class="title">
-        <img class="euroSign" src="./../assets/eurosign.png" />
+        <img class="euroSign" src="../../assets/eurosign.png" />
       </span>
       <span class="title text">Currencies</span>
     </TopBar>
 </template>
 
 <script>
-import TopBar from './TopBar'
+import TopBar from '../Widgets/TopBar'
 export default {
  name: 'CurrenciesTopBar',
  components: {

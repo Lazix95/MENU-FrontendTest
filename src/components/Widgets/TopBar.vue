@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./../scss/_variables.scss";
+@import "../../scss/variables";
 
 @mixin topBar {
   height: 60px;

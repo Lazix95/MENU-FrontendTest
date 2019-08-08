@@ -1,7 +1,7 @@
 <template>
   <div class="currencyList">
     <TopBar class="topBar" darken>
-      <img style="height: 45px" src="./../assets/menu.png" alt="menu_logo" />
+      <img style="height: 45px" src="../../assets/menu.png" alt="menu_logo" />
     </TopBar>
 
     <div class="container">
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import TopBar from "./TopBar";
-import SearchInput from "./SearchInput";
+import TopBar from "../Widgets/TopBar";
+import SearchInput from "../Widgets/SearchInput";
 import Currency from "./Currency"
 import { mapGetters, mapMutations } from 'vuex'
 import { filter } from 'minimatch';
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./../scss/_variables.scss";
+@import "../../scss/variables";
 
 .currencyList {
   background: $darkenBackground;
